@@ -1,0 +1,40 @@
+{% import "macros" as m %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sun Haven Toolkit</title>
+    <link rel="stylesheet" href="/chota.min.css">
+    <style>
+      .container {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 20px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sun Haven Toolkit</h1>
+
+      {% if errors | length > 1 %}
+          <small class="text-error" style="margin-top: -20px">
+              {{ errors | length }} field(s) have errors
+          </small>
+      {% endif %}
+
+      <form action="/new" method="get" enctype="multipart/form-data">
+        <fieldset>
+        <input type="submit" value="New"/>
+        </fieldset>
+      </form>
+      <form action="/load" method="get" enctype="multipart/form-data">
+        <fieldset>
+        <input type="submit" value="Load"/>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

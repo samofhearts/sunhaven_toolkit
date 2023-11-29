@@ -1,0 +1,48 @@
+{% import "macros" as m %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sun Haven Toolkit</title>
+    <link rel="stylesheet" href="/chota.min.css">
+    <style>
+      .container {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 20px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sun Haven Toolkit</h1>
+
+      {% if errors | length > 1 %}
+          <small class="text-error" style="margin-top: -20px">
+              {{ errors | length }} field(s) have errors
+          </small>
+      {% endif %}
+
+      <form action="/loading" method="post" enctype="multipart/form-data">
+        <fieldset>
+
+
+          <div class="col">
+            {{
+                m::select(
+                    label="Select A Save",
+                    name="selections.load",
+                    options=files
+                )
+            }}
+            </div>
+
+
+        <input type="submit" value="load"/>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

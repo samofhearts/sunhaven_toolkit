@@ -1,0 +1,9 @@
+[default]
+address = "0.0.0.0"
+port = 8123
+limits.data-form = "2MiB"
+template_dir = "templates/"
+
+[staging]
+address = "0.0.0.0"
+port = 8123

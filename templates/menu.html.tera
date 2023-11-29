@@ -1,0 +1,873 @@
+{% import "macros" as m %}
+
+
+{# DEFINING LISTS TO POPULATE CHECKBOXES #}
+
+{# MUSEUM HALL OF GEMS #}
+
+{# MONEY MUSEUM #}
+{% set_global money_museum_list = ["money_museum_coins","money_museum_manaorbs","money_museum_tickets"] %}
+{% set_global money_museum_label = ["Coins (25,000)","Mana Orbs (1,000)","Tickets (1,000)"] %}
+
+{# BAR MUSEUM #}
+{% set_global bar_museum_list = ["bar_museum_copperbar","bar_museum_ironbar","bar_museum_goldbar","bar_museum_adamantbar","bar_museum_mithrilbar","bar_museum_sunitebar","bar_museum_elvensteelbar","bar_museum_gloritebar"] %}
+{% set_global bar_museum_label = ["Copper Bar","Iron Bar","Gold Bar","Adamant Bar","Mithril Bar","Sunite Bar","Elven Steel Bar","Glorite Bar"] %}
+
+{# GEM MUSEUM #}
+{% set_global gem_museum_list = ["gem_museum_sapphire","gem_museum_ruby","gem_museum_amethyst","gem_museum_diamond","gem_museum_havenite","gem_museum_dizzite","gem_museum_blackdiamond"] %}
+{% set_global gem_museum_label = ["Sapphire","Ruby","Amethyst","Diamond","Havenite","Dizzite","Black Diamond"] %}
+
+{# NEL'VARI MINES MUSEUM #}
+{% set_global nelvari_mines_museum_list = ["nelvari_mines_museum_manashard","nelvari_mines_museum_sparklingdragonscale","nelvari_mines_museum_sharpdragonscale","nelvari_mines_museum_toughdragonscale"] %}
+{% set_global nelvari_mines_museum_label = ["Mana Shard (5)","Sparkling Dragon Scale (5)","Sharp Dragon Scale (5)","Tough Dragon Scale (5)"] %}
+
+{# WITHERGATE MINES MUSEUM #}
+{% set_global withergate_mines_museum_list = ["withergate_mines_museum_candycorn","withergate_mines_museum_rockcandygem","withergate_mines_museum_jawbreakergem","withergate_mines_museum_hardbutterscotchgem"] %}
+{% set_global withergate_mines_museum_label = ["Candy Corn (5)","Rock Candy Gem (5)","Jawbreaker Gem (5)","Hard Butterscotch Gem (5)"] %}
+
+{# GOLDEN MUSEUM #}
+{% set_global golden_museum_list = ["golden_museum_goldenmilk","golden_museum_goldenegg","golden_museum_goldenwool","golden_museum_goldenlog","golden_museum_goldenfeather","golden_museum_goldensilk","golden_museum_goldenorange","golden_museum_goldenstrawberry","golden_museum_goldenblueberry","golden_museum_goldenpomegranate","golden_museum_goldenapple","golden_museum_goldenpeach","golden_museum_goldenraspberry"] %}
+{% set_global golden_museum_label = ["Golden Milk","Golden Egg","Golden Wool","Golden Log","Golden Feather","Golden Silk","Golden Orange","Golden Strawberry","Golden Blueberry","Golden Pomegranate","Golden Apple","Golden Peach","Golden Raspberry"] %}
+
+{# MANA BUNDLE #}
+{% set_global mana_museum_list = ["mana_museum_manadrop"] %}
+{% set_global mana_museum_label = ["Mana Drop (20)"] %}
+
+
+
+{# MUSEUM HALL OF CULTURE #}
+
+{# FORAGING MUSEUM #}
+{% set_global foraging_museum_list = ["foraging_museum_log","foraging_museum_apple","foraging_museum_seaweed","foraging_museum_blueberry","foraging_museum_mushroom","foraging_museum_orange","foraging_museum_strawberry","foraging_museum_berry","foraging_museum_raspberry","foraging_museum_peach","foraging_museum_sanddollar","foraging_museum_starfish"] %}
+{% set_global foraging_museum_label = ["Log","Apple","Seaweed","Blueberry","Mushroom","Orange","Strawberry","Berry","Raspberry","Peach","Sand Dollar","Starfish"] %}
+
+{# SPRING CROP MUSEUM #}
+{% set_global spring_crop_museum_list = ["spring_crop_museum_grape","spring_crop_museum_wheat","spring_crop_museum_tomato","spring_crop_museum_corn","spring_crop_museum_onion","spring_crop_museum_potato","spring_crop_museum_greenroot","spring_crop_museum_carrot","spring_crop_museum_kale","spring_crop_museum_lettuce","spring_crop_museum_cinnaberry","spring_crop_museum_pepper","spring_crop_museum_shimmeroot"] %}
+{% set_global spring_crop_museum_label = ["Grape","Wheat","Tomato","Corn","Onion","Potato","Greenroot","Carrot","Kale","Lettuce","Cinnaberry","Pepper","Shimmeroot"] %}
+
+{# SUMMER CROP MUSEUM #}
+{% set_global summer_crop_museum_list = ["summer_crop_museum_armoranth","summer_crop_museum_beet","summer_crop_museum_lemon","summer_crop_museum_chocoberry","summer_crop_museum_pineapple","summer_crop_museum_pepper","summer_crop_museum_melon","summer_crop_museum_stormelon","summer_crop_museum_durian"] %}
+{% set_global summer_crop_museum_label = ["Armoranth","Beet","Lemon","Chocoberry","Pineapple","Pepper","Melon","Stormelon","Durian"] %}
+
+{# FALL CROP MUSEUM #}
+{% set_global fall_crop_museum_list = ["fall_crop_museum_onion","fall_crop_museum_yam","fall_crop_museum_sodapopcrop","fall_crop_museum_fizzyfruit","fall_crop_museum_cranberry","fall_crop_museum_barley","fall_crop_museum_pumpkin","fall_crop_museum_ghostpepper","fall_crop_museum_butternut"] %}
+{% set_global fall_crop_museum_label = ["Onion","Yam","Soda Pop Crop","Fizzy Fruit","Cranberry","Barley","Pumpkin","Ghost Pepper","Butternut"] %}
+
+{# WINTER CROP MUSEUM #}
+{% set_global winter_crop_museum_list = ["winter_crop_museum_tealeaves","winter_crop_museum_turnip","winter_crop_museum_purpleeggplant","winter_crop_museum_heatfruit","winter_crop_museum_marshmallowbean","winter_crop_museum_brrnana","winter_crop_museum_starfruit","winter_crop_museum_hexagonberry","winter_crop_museum_snowpea","winter_crop_museum_snowball","winter_crop_museum_blizzardberry","winter_crop_museum_balloonfruit","winter_crop_museum_pythagoreanberry","winter_crop_museum_bluemoonfruit","winter_crop_museum_candycane"] %}
+{% set_global winter_crop_museum_label = ["Tea Leaves","Turnip","Purple Eggplant","Heat Fruit","Marshmallow Bean","Brr-Nana","Starfruit","Hexagon Berry","Snow Pea","Snow Ball","Blizzard Berry","Balloon Fruit","Pythagorean Berry","Blue Moon Fruit","Candy Cane"] %}
+
+{# FLOWERS MUSEUM #}
+{% set_global flowers_museum_list = ["flowers_museum_honeyflower","flowers_museum_redrose","flowers_museum_bluerose","flowers_museum_daisy","flowers_museum_orchid","flowers_museum_tulip","flowers_museum_hibiscus","flowers_museum_lavender","flowers_museum_sunflower","flowers_museum_lily","flowers_museum_lotus"] %}
+{% set_global flowers_museum_label = ["Honey Flower","Red Rose","Blue Rose","Daisy","Orchid","Tulip","Hibiscus","Lavender","Sunflower","Lily","Lotus"] %}
+
+{# COMBAT MUSEUM #}
+{% set_global combat_museum_list = ["combat_museum_leafietrinket","combat_museum_eliteleafietrinket","combat_museum_centipillartrinket","combat_museum_peppinchgreentrinket","combat_museum_scorpeppertrinket","combat_museum_elitescorpeppertrinket","combat_museum_hatcrabtrinket","combat_museum_floatycrabtrinket","combat_museum_bucketcrabtrinket","combat_museum_umbrellacrabtrinket","combat_museum_chimchucktrinket","combat_museum_ancientsunhavensword","combat_museum_ancientnelvarisword","combat_museum_ancientwithergatesword"] %}
+{% set_global combat_museum_label = ["Leafie Trinket","Elite Leafie Trinket","Centipillar Trinket","Peppinch-Green Trinket","Scorpepper Trinket","Elite Scorpepper Trinket","Hat Crab Trinket","Floaty Crab Trinket","Bucket Crab Trinket","Umbrella Crab Trinket","Chimchuck Trinket","Ancient Sun Haven Sword","Ancient Nel'Vari Sword","Ancient Withergate Sword"] %}
+
+{# EXPLORATION MUSEUM #}
+{% set_global exploration_museum_list = ["exploration_museum_petrifiedlog","exploration_museum_phoenixfeather","exploration_museum_fairywings","exploration_museum_griffonegg","exploration_museum_manasap","exploration_museum_pumicestone","exploration_museum_mysteriousantler","exploration_museum_dragonfang","exploration_museum_monstercandy","exploration_museum_unicornhairtuft"] %}
+{% set_global exploration_museum_label = ["Petrified Log","Phoenix Feather","Fairy Wings","Griffon Egg","Mana Sap","Pumice Stone","Mysterious Antler","Dragon Fang","Monster Candy","Unicorn Hair Tuft"] %}
+
+{# ALCHEMY MUSEUM #}
+{% set_global alchemy_museum_list = ["alchemy_museum_manapotion","alchemy_museum_healthpotion","alchemy_museum_attackpotion","alchemy_museum_speedpotion","alchemy_museum_defensepotion","alchemy_museum_advancedattackpotion","alchemy_museum_advanceddefensepotion","alchemy_museum_advancedspellpotion","alchemy_museum_incredibleattackpotion","alchemy_museum_incredibledefensepotion","alchemy_museum_incrediblespellpotion"] %}
+{% set_global alchemy_museum_label = ["Mana Potion","Health Potion","Attack Potion","Speed Potion","Defense Potion","Advanced Attack Potion","Advanced Defense Potion","Advanced Spell Potion","Incredible Attack Potion","Incredible Defense Potion","Incredible Spell Potion"] %}
+
+{# NEL'VARI FARMING BUNDLE #}
+{% set_global nelvari_farming_museum_list = ["nelvari_farming_museum_acorn","nelvari_farming_museum_rockfruit","nelvari_farming_museum_waterfruit","nelvari_farming_museum_firefruit","nelvari_farming_museum_walkchoy","nelvari_farming_museum_windchime","nelvari_farming_museum_shiiwalkimushroom","nelvari_farming_museum_dragonfruit","nelvari_farming_museum_managem","nelvari_farming_museum_cattail","nelvari_farming_museum_indiglow"] %}
+{% set_global nelvari_farming_museum_label = ["Acorn","Rock Fruit","Water Fruit","Fire Fruit","Walk Choy","Wind Chime","Shiiwalki Mushroom","Dragon Fruit","Mana Gem","Cat Tail","Indiglow"] %}
+
+{# NEL'VARI TEMPLE BUNDLE #}
+{% set_global nelvari_temple_museum_list = ["nelvari_temple_museum_originsofthegrandtreeandnivarapt1","nelvari_temple_museum_originsofthegrandtreeandnivarapt2","nelvari_temple_museum_originsofthegrandtreeandnivarapt3","nelvari_temple_museum_originsofthegrandtreeandnivarapt4","nelvari_temple_museum_originsofthegrandtreeandnivarapt5","nelvari_temple_museum_originsofsunhavenandeliospt1","nelvari_temple_museum_originsofsunhavenandeliospt2","nelvari_temple_museum_originsofsunhavenandeliospt3","nelvari_temple_museum_originsofsunhavenandeliospt4","nelvari_temple_museum_originsofsunhavenandeliospt5","nelvari_temple_museum_originsofdynusandshadowspt1","nelvari_temple_museum_originsofdynusandshadowspt2","nelvari_temple_museum_originsofdynusandshadowspt3","nelvari_temple_museum_originsofdynusandshadowspt4","nelvari_temple_museum_originsofdynusandshadowspt5"] %}
+{% set_global nelvari_temple_museum_label = ["Origins of the Grand Tree and Nivara Pt 1","Origins of the Grand Tree and Nivara Pt 2","Origins of the Grand Tree and Nivara Pt 3","Origins of the Grand Tree and Nivara Pt 4","Origins of the Grand Tree and Nivara Pt 5","Origins of Sun Haven and Elios Pt 1","Origins of Sun Haven and Elios Pt 2","Origins of Sun Haven and Elios Pt 3","Origins of Sun Haven and Elios Pt 4","Origins of Sun Haven and Elios Pt 5","Origins of Dynus and Shadows Pt 1","Origins of Dynus and Shadows Pt 2","Origins of Dynus and Shadows Pt 3","Origins of Dynus and Shadows Pt 4","Origins of Dynus and Shadows Pt 5"] %}
+
+{# WITHERGATE FARMING BUNDLE #}
+{% set_global withergate_farming_museum_list = ["withergate_farming_museum_krakenkale","withergate_farming_museum_tombmelon","withergate_farming_museum_suckerstem","withergate_farming_museum_razorstalk","withergate_farming_museum_snappyplant","withergate_farming_museum_moonplant","withergate_farming_museum_eggplant","withergate_farming_museum_demonorb"] %}
+{% set_global withergate_farming_museum_label = ["Kraken Kale","Tombmelon","Suckerstem","Razorstalk","Snappy Plant","Moonplant","Eggplant","Demon Orb"] %}
+
+
+
+{# MUSEUM AQUARIUM #}
+
+{# FISH RELIC BUNDLE #}
+{% set_global fishing_relic_museum_list = ["fishing_relic_museum_handmadebobber","fishing_relic_museum_ancientmagicstaff","fishing_relic_museum_bronzedragonrelic","fishing_relic_museum_oldswordhilt","fishing_relic_museum_nelvarirunestone","fishing_relic_museum_ancientelvenheaddress","fishing_relic_museum_oldmayoralpainting","fishing_relic_museum_tentaclemonsteremblem","fishing_relic_museum_ancientangelquill","fishing_relic_museum_ancientnagacrook","fishing_relic_museum_ancientamaritotem"] %}
+{% set_global fishing_relic_museum_label = ["Handmade Bobber","Ancient Magic Staff","Bronze Dragon Relic","Old Sword Hilt","Nel'Vari Runestone","Ancient Elven Headdress","Old Mayoral Painting","Tentacle Monster Emblem","Ancient Angel Quill","Ancient Naga Crook","Ancient Amari Totem"] %}
+
+{# SPRING FISH BUNDLE #}
+{% set_global spring_fish_museum_list = ["spring_fish_museum_butterflyfish","spring_fish_museum_sunfish","spring_fish_museum_flowerflounder","spring_fish_museum_raincloudray","spring_fish_museum_floraltrout","spring_fish_museum_neontetra","spring_fish_museum_seahorse","spring_fish_museum_paintedegg","spring_fish_museum_tadpole"] %}
+{% set_global spring_fish_museum_label = ["Butterflyfish","Sunfish","Flower Flounder","Raincloud Ray","Floral Trout","Neon Tetra","Seahorse","Painted Egg","Tadpole"] %}
+
+{# SUMMER FISH BUNDLE #}
+{% set_global summer_fish_museum_list = ["summer_fish_museum_blazeel","summer_fish_museum_hearthangler","summer_fish_museum_scorchingsquid","summer_fish_museum_magmastar","summer_fish_museum_tinderturtle","summer_fish_museum_pyrelus","summer_fish_museum_flameray","summer_fish_museum_moltenslug","summer_fish_museum_searback"] %}
+{% set_global summer_fish_museum_label = ["Blazeel","Hearth Angler","Scorching Squid","Magma Star","Tinder Turtle","Pyrelus","Flame Ray","Molten Slug","Searback"] %}
+
+{# FALL FISH BUNDLE #}
+{% set_global fall_fish_museum_list = ["fall_fish_museum_coducopia","fall_fish_museum_kingsalmon","fall_fish_museum_hayfish","fall_fish_museum_acornanchovy","fall_fish_museum_vampirepiranha","fall_fish_museum_ghostfish","fall_fish_museum_pumpkinjelly","fall_fish_museum_pirateperch","fall_fish_museum_autumnleafsole"] %}
+{% set_global fall_fish_museum_label = ["Coducopia","King Salmon","Hayfish","Acorn Anchovy","Vampire Piranha","Ghostfish","Pumpkin Jelly","Pirate Perch","Autumn Leaf Sole"] %}
+
+{# WINTER FISH BUNDLE #}
+{% set_global winter_fish_museum_list = ["winter_fish_museum_frostfin","winter_fish_museum_christmaslightfish","winter_fish_museum_hollycarp","winter_fish_museum_jinglebass","winter_fish_museum_frozentuna","winter_fish_museum_scarffish","winter_fish_museum_heatfin","winter_fish_museum_iciclecarp","winter_fish_museum_blazingherring"] %}
+{% set_global winter_fish_museum_label = ["Frostfin","Christmas Lightfish","Holly Carp","Jingle Bass","Frozen Tuna","Scarffish","Heatfin","Icicle Carp","Blazing Herring"] %}
+
+{# NELVARI FISH BUNDLE #}
+{% set_global nelvari_fish_museum_list = ["nelvari_fish_museum_robedparrotfish","nelvari_fish_museum_axolotl","nelvari_fish_museum_frilledbetta","nelvari_fish_museum_horsefish","nelvari_fish_museum_flamefish","nelvari_fish_museum_dragongulper","nelvari_fish_museum_neapolitanfish","nelvari_fish_museum_snobfish","nelvari_fish_museum_kelpeel","nelvari_fish_museum_princelyfrog","nelvari_fish_museum_angelfin","nelvari_fish_museum_bubblefish","nelvari_fish_museum_crystaltetra","nelvari_fish_museum_skyray"] %}
+{% set_global nelvari_fish_museum_label = ["Robed Parrotfish","Axolotl","Frilled Betta","Horsefish","Flame Fish","Dragon Gulper","Neapolitan Fish","Snobfish","Kelp Eel","Princely Frog","Angelfin","Bubblefish","Crystal Tetra","Sky Ray"] %}
+
+{# WITHERGATE FISH BUNDLE #}
+{% set_global withergate_fish_museum_list = ["withergate_fish_museum_kraken","withergate_fish_museum_waterbear","withergate_fish_museum_bonemouthbass","withergate_fish_museum_mummytrout","withergate_fish_museum_deadeyeshrimp","withergate_fish_museum_electriceel","withergate_fish_museum_brainjelly","withergate_fish_museum_redfinnedpincher","withergate_fish_museum_seabat","withergate_fish_museum_ghostheadtuna","withergate_fish_museum_globfish","withergate_fish_museum_livingjelly","withergate_fish_museum_purrmaid","withergate_fish_museum_slimeleech","withergate_fish_museum_goblinshark","withergate_fish_museum_moonfish","withergate_fish_museum_toothyangler","withergate_fish_museum_vampiresquid","withergate_fish_museum_viperfish","withergate_fish_museum_albinosquid","withergate_fish_museum_devilfin","withergate_fish_museum_shadowtuna"] %}
+{% set_global withergate_fish_museum_label = ["Kraken","Water Bear","Bonemouth Bass","Mummy Trout","Deadeye Shrimp","Electric Eel","Brain Jelly","Redfinned Pincher","Sea Bat","Ghosthead Tuna","Globfish","Living Jelly","Purrmaid","Slime Leech","Goblin Shark","Moonfish","Toothy Angler","Vampire Squid","Viperfish","Albino Squid","Devilfin","Shadow Tuna"] %}
+
+{# LARGE FISH TANK #}
+{% set_global large_fish_tank_museum_list = ["large_fish_tank_museum_pygmytuna","large_fish_tank_museum_catfish","large_fish_tank_museum_goldfish","large_fish_tank_museum_streamlinecod","large_fish_tank_museum_salmon","large_fish_tank_museum_clownfish","large_fish_tank_museum_blackbass","large_fish_tank_museum_rainbowtrout","large_fish_tank_museum_popeyegoldfish","large_fish_tank_museum_pufferfish","large_fish_tank_museum_ironheadsturgeon","large_fish_tank_museum_cuddlefish","large_fish_tank_museum_lobster","large_fish_tank_museum_silvercarp","large_fish_tank_museum_tuna","large_fish_tank_museum_bluntedswordfish","large_fish_tank_museum_ribboneel","large_fish_tank_museum_tigertrout","large_fish_tank_museum_eel","large_fish_tank_museum_redsnapper","large_fish_tank_museum_carp","large_fish_tank_museum_redeyepiranha","large_fish_tank_museum_angelfish","large_fish_tank_museum_whitebellyshark","large_fish_tank_museum_koifish","large_fish_tank_museum_sandstonefish"] %}
+{% set_global large_fish_tank_museum_label = ["Pygmy Tuna","Catfish","Gold Fish","Streamline Cod","Salmon","Clownfish","Black Bass","Rainbow Trout","Popeye Goldfish","Pufferfish","Ironhead Sturgeon","Cuddlefish","Lobster","Silver Carp","Tuna","Blunted Swordfish","Ribbon Eel","Tiger Trout","Eel","Red Snapper","Carp","Redeye Piranha","Angel Fish","Whitebelly Shark","Koi Fish","Sandstone Fish"] %}
+
+
+
+
+{# ALTAR #}
+
+{# RARE ALTAR #}
+{% set_global rare_altar_list = ["rare_altar_adventurekeepsake","rare_altar_richeskeepsake","rare_altar_romancekeepsake","rare_altar_peacekeepsake"] %}
+{% set_global rare_altar_label = ["Adventure Keepsake","Riches Keepsake","Romance Keepsake","Peace Keepsake"] %}
+
+{# FRUIT ALTAR #}
+{% set_global fruit_altar_list = ["fruit_altar_raspberries","fruit_altar_peach","fruit_altar_orange","fruit_altar_blueberries","fruit_altar_berry","fruit_altar_apple"] %}
+{% set_global fruit_altar_label = ["Raspberries (20)","Peach (10)","Orange (20)","Blueberries (20)","Berry (10)","Apple (20)"] %}
+
+{# FORAGING ALTAR #}
+{% set_global foraging_altar_list = ["foraging_altar_log","foraging_altar_firecrystal","foraging_altar_earthcrystal","foraging_altar_watercrystal","foraging_altar_sanddollar"] %}
+{% set_global foraging_altar_label = ["Log (300)","Fire Crystal (30)","Earth Crystal (30)","Water Crystal (30)","Sand Dollar (10)"] %}
+
+{# GOLD ALTAR #}
+{% set_global gold_altar_list = ["gold_altar_coins","gold_altar_goldbar"] %}
+{% set_global gold_altar_label = ["Coins (100,000)","Gold Bar (10)"] %}
+
+{# COOKING ALTAR #}
+{% set_global cooking_altar_list = ["cooking_altar_cheesecake","cooking_altar_spicyramen","cooking_altar_sesamericeball","cooking_altar_pizza","cooking_altar_cookies","cooking_altar_coffee","cooking_altar_tomatosoup","cooking_altar_shimmerroottreat","cooking_altar_energysmoothie"] %}
+{% set_global cooking_altar_label = ["Cheesecake","Spicy Ramen","Sesame Rice Ball","Pizza","Cookies","Coffee","Tomato Soup","Shimmerroot Treat","Energy Smoothie"] %}
+
+{# MINING ALTAR #}
+{% set_global mining_altar_list = ["mining_altar_stone","mining_altar_coal","mining_altar_copperore","mining_altar_sapphire","mining_altar_ruby","mining_altar_amethyst","mining_altar_diamond","mining_altar_havenite"] %}
+{% set_global mining_altar_label = ["Stone (999)","Coal (50)","Copper Ore (100)","Sapphire (10)","Ruby (10)","Amethyst (10)","Diamond (5)","Havenite (5)"] %}
+
+{# FARMING ALTAR #}
+{% set_global farming_altar_list = ["farming_altar_wheat","farming_altar_corn","farming_altar_potatoes","farming_altar_tomato","farming_altar_carrot","farming_altar_sugarcane","farming_altar_onion","farming_altar_greenroot","farming_altar_honeyflower","farming_altar_rice"] %}
+{% set_global farming_altar_label = ["Wheat (30)","Corn (30)","Potatoes (30)","Tomato (30)","Carrot (30)","Sugar Cane (30)","Onion (30)","Greenroot (30)","Honey Flower (30)","Rice (30)"] %}
+
+{# FISH ALTAR #}
+{% set_global fish_altar_list = ["fish_altar_dorado","fish_altar_duorado","fish_altar_crab","fish_altar_seabass","fish_altar_goldfish","fish_altar_bonemouthbass","fish_altar_chromafin","fish_altar_goldencarp","fish_altar_flamefish","fish_altar_purrmaid","fish_altar_crystaltetra","fish_altar_skyray"] %}
+{% set_global fish_altar_label = ["Dorado","Duorado","Crab","Sea Bass","Gold Fish","Bonemouth Bass","Chromafin","Golden Carp","Flamefish","Purrmaid","Crystal Tetra","Sky Ray"] %}
+
+{# TICKETS ALTAR #}
+{% set_global tickets_altar_list = ["tickets_altar_tickets"] %}
+{% set_global tickets_altar_label = ["Tickets (5,000)"] %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# BEGINNING OF HTML #}
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sun Haven Toolkit</title>
+    <link rel="stylesheet" href="/chota.min.css">
+    <style>
+      .container {
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 20px 10px;
+      }
+    </style>
+
+    <script>
+      function saveAlert() {
+        setTimeout("alert('Data Saved');",1);
+      }
+    </script>
+
+  </head>
+  <body>
+    {# TOP OF SCREEN ANCHOR LINKS #}
+    <div class="container">
+      <header>
+        <fieldset>
+          <form action="/menu/update" method="post" enctype="multipart/form-data">
+            {{ m::hidden_input(name="tracker.name", value=tracker) }}
+          <a href="#museum">Museum</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#hallofgems">Hall of Gems</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#hallofculture">Hall of Culture</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#theaquarium">The Aquarium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#altars">Altars</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Update" name="submit.value" style="margin:0 auto;"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input onclick="saveAlert()" type="submit" value="Save" name="submit.value" style="margin:0 auto;"/>
+        </fieldset>
+      </header>
+
+      <h1>Sun Haven Toolkit</h1>
+
+        <fieldset> 
+          
+{#  #}
+{# MUSEUMS #}
+{#  #}
+
+          <a id="museum"><h1>Museum</h1></a>
+            <fieldset>
+
+
+
+{#  #}
+{# HALL OF GEMS #}
+{#  #}
+
+              <a id="hallofgems"><h2>Hall of Gems</h2></a>
+                <fieldset>
+                  {# MONEY BUNDLE #}
+                  <fieldset><h3>Money Bundle</h3>
+                    <table>
+                      <tr>
+                        {# Loops the list from above and creates a checkbox and pulls the matching image file #}
+                        {% for item in money_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=money_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {# this makes it start a new row every 4 items #}
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# BAR BUNDLE #}
+                    <fieldset><h3>Bar Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in bar_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=bar_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# GEM BUNDLE #}
+                    <fieldset><h3>Gem Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in gem_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=gem_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# NEL'VARI MINES BUNDLE #}
+                    <fieldset><h3>Nel'Vari Mines Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in nelvari_mines_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=nelvari_mines_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# WITHERGATE MINES BUNDLE #}
+                    <fieldset><h3>Withergate Mines Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in withergate_mines_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=withergate_mines_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# GOLDEN BUNDLE #}
+                    <fieldset><h3>Golden Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in golden_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=golden_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# MANA BUNDLE #}
+                    <fieldset><h3>Mana Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in mana_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=mana_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+                </fieldset>
+
+
+{#  #}
+{# HALL OF CULTURE #}
+{#  #}
+
+
+                <a id="hallofculture"><h2>Hall of Culture</h2></a>
+                <fieldset>
+                  {# FORAGING BUNDLE #}
+                  <fieldset><h3>Foraging Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in foraging_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=foraging_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# SPRING CROP BUNDLE #}
+                    <fieldset><h3>Spring Crop Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in spring_crop_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=spring_crop_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# SUMMER CROP BUNDLE #}
+                    <fieldset><h3>Summer Crop Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in summer_crop_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=summer_crop_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# FALL CROP BUNDLE #}
+                    <fieldset><h3>Fall Crop Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in fall_crop_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=fall_crop_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# WINTER CROP BUNDLE #}
+                    <fieldset><h3>Winter Crop Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in winter_crop_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=winter_crop_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# FLOWERS BUNDLE #}
+                    <fieldset><h3>Flowers Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in flowers_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=flowers_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# COMBAT BUNDLE #}
+                    <fieldset><h3>Combat Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in combat_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=combat_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# EXPLORATION BUNDLE #}
+                    <fieldset><h3>Exploration Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in exploration_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=exploration_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# ALCHEMY BUNDLE #}
+                    <fieldset><h3>Alchemy Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in alchemy_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=alchemy_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# NEL'VARI BUNDLE #}
+                    <fieldset><h3>Nel'Vari Farming Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in nelvari_farming_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=nelvari_farming_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# NEL'VARI TEMPLE BUNDLE #}
+                    <fieldset><h3>Nel'Vari Temple Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in nelvari_temple_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=nelvari_temple_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# WITHERGATE FARMING BUNDLE #}
+                    <fieldset><h3>Withergate Farming Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in withergate_farming_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=withergate_farming_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+                </fieldset>
+
+
+{#  #}
+{# THE AQUARIUM #}
+{#  #}
+
+
+                <a id="theaquarium"><h2>The Aquarium</h2></a>
+                <fieldset>
+                  {# FISHING RELIC BUNDLE #}
+                  <fieldset><h3>Fishing Relic Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in fishing_relic_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=fishing_relic_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# SPRING FISH BUNDLE #}
+                    <fieldset><h3>Spring Fish Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in spring_fish_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=spring_fish_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# SUMMER FISH BUNDLE #}
+                    <fieldset><h3>Summer Fish Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in summer_fish_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=summer_fish_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# FALL FISH BUNDLE #}
+                    <fieldset><h3>Fall Fish Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in fall_fish_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=fall_fish_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# WINTER FISH BUNDLE #}
+                    <fieldset><h3>Winter Fish Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in winter_fish_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=winter_fish_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# NEL'VARI FISH BUNDLE #}
+                    <fieldset><h3>Nel'Vari Fish Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in nelvari_fish_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=nelvari_fish_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# WITHERGATE FISH BUNDLE #}
+                    <fieldset><h3>Withergate Fish Bundle</h3>
+                    <table>
+                      <tr>
+                        {% for item in withergate_fish_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=withergate_fish_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+
+                    {# LARGE FISH TANK BUNDLE #}
+                    <fieldset><h3>Large Fish Tank</h3>
+                    <table>
+                      <tr>
+                        {% for item in large_fish_tank_museum_list %}
+                          <td>
+                          <img src=../images/{{item}}.jpg width="35" height="35">
+                            {{ m::checkbox(name=item, label=large_fish_tank_museum_label[loop.index0], value="true") }}
+                          </td>
+                          {% if loop.index % 4 == 0%}
+                            </tr><tr>
+                          {% endif %}
+                        {% endfor %}
+                      </tr>
+                    </table></fieldset>
+                </fieldset>
+            </fieldset>
+        </fieldset>
+
+
+
+
+
+{#  #}
+{# ALTARS #}
+{#  #}
+      <br />
+      <br />
+
+      <fieldset>
+      <fieldset>
+      <fieldset>
+      <a id="altars"><h1>Altars</h1></a>
+
+
+          {# RARE ALTAR #}
+          <fieldset><h3>Rare Altar</h3>
+            <table>
+              <tr>
+                {% for item in rare_altar_list %}
+                  <td>
+                  <img src=../images/{{item}}.jpg width="35" height="35">
+                    {{ m::checkbox(name=item, label=rare_altar_label[loop.index0], value="true") }}
+                  </td>
+                  {% if loop.index % 4 == 0%}
+                    </tr><tr>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </table></fieldset>
+
+          {# FRUIT ALTAR #}
+          <fieldset><h3>Fruit Altar</h3>
+            <table>
+              <tr>
+                {% for item in fruit_altar_list %}
+                  <td>
+                  <img src=../images/{{item}}.jpg width="35" height="35">
+                    {{ m::checkbox(name=item, label=fruit_altar_label[loop.index0], value="true") }}
+                  </td>
+                  {% if loop.index % 4 == 0%}
+                    </tr><tr>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </table></fieldset>
+
+          {# FORAGING ALTAR #}
+          <fieldset><h3>Foraging Altar</h3>
+            <table>
+              <tr>
+                {% for item in foraging_altar_list %}
+                  <td>
+                  <img src=../images/{{item}}.jpg width="35" height="35">
+                    {{ m::checkbox(name=item, label=foraging_altar_label[loop.index0], value="true") }}
+                  </td>
+                  {% if loop.index % 4 == 0%}
+                    </tr><tr>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </table></fieldset>
+
+          {# GOLD ALTAR #}
+          <fieldset><h3>Gold Altar</h3>
+            <table>
+              <tr>
+                {% for item in gold_altar_list %}
+                  <td>
+                  <img src=../images/{{item}}.jpg width="35" height="35">
+                    {{ m::checkbox(name=item, label=gold_altar_label[loop.index0], value="true") }}
+                  </td>
+                  {% if loop.index % 4 == 0%}
+                    </tr><tr>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </table></fieldset>
+
+          {# COOKING ALTAR #}
+          <fieldset><h3>Cooking Altar</h3>
+            <table>
+              <tr>
+                {% for item in cooking_altar_list %}
+                  <td>
+                  <img src=../images/{{item}}.jpg width="35" height="35">
+                    {{ m::checkbox(name=item, label=cooking_altar_label[loop.index0], value="true") }}
+                  </td>
+                  {% if loop.index % 4 == 0%}
+                    </tr><tr>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </table></fieldset>
+
+          {# MINING ALTAR #}
+          <fieldset><h3>Mining Altar</h3>
+            <table>
+              <tr>
+                {% for item in mining_altar_list %}
+                  <td>
+                  <img src=../images/{{item}}.jpg width="35" height="35">
+                    {{ m::checkbox(name=item, label=mining_altar_label[loop.index0], value="true") }}
+                  </td>
+                  {% if loop.index % 4 == 0%}
+                    </tr><tr>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </table></fieldset>
+
+          {# FARMING ALTAR #}
+          <fieldset><h3>Farming Altar</h3>
+            <table>
+              <tr>
+                {% for item in farming_altar_list %}
+                  <td>
+                  <img src=../images/{{item}}.jpg width="35" height="35">
+                    {{ m::checkbox(name=item, label=farming_altar_label[loop.index0], value="true") }}
+                  </td>
+                  {% if loop.index % 4 == 0%}
+                    </tr><tr>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </table></fieldset>
+
+          {# FISH ALTAR #}
+          <fieldset><h3>Fish Altar</h3>
+            <table>
+              <tr>
+                {% for item in fish_altar_list %}
+                  <td>
+                  <img src=../images/{{item}}.jpg width="35" height="35">
+                    {{ m::checkbox(name=item, label=fish_altar_label[loop.index0], value="true") }}
+                  </td>
+                  {% if loop.index % 4 == 0%}
+                    </tr><tr>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </table></fieldset>
+
+          {# TICKETS ALTAR #}
+          <fieldset><h3>Tickets Altar</h3>
+            <table>
+              <tr>
+                {% for item in tickets_altar_list %}
+                  <td>
+                  <img src=../images/{{item}}.jpg width="35" height="35">
+                    {{ m::checkbox(name=item, label=tickets_altar_label[loop.index0], value="true") }}
+                  </td>
+                  {% if loop.index % 4 == 0%}
+                    </tr><tr>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </table></fieldset>
+
+        </fieldset>
+        </fieldset>
+        </fieldset>
+        <br />
+      </form>
+    </div>
+  </body>
+</html>
