@@ -39,3 +39,6 @@ Map that shows where certain items can be found (Combat)
 Hover over item tips on where to find in the main community / altar tracker
 Improved UI, Look, and Feel.
 Pre-built executables for different OSs
+
+SECURITY NOTE!
+If you choose to host this on a server with people you don't trust or on the public internet you may be making yourself vulnerable to a number of different attacks. It has not been tested or pentested for security at this time. The intended use case is on a local area network with people you know and trust not to do or attempt anything malicious.
